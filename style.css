@@ -1,7 +1,4 @@
-.flex{
-  
-    width: 300px;
-}
+
 .cp{
     margin-left: 50px;
 }
@@ -12,3 +9,19 @@ a {
     
 }
 
+
+.disable{
+    display: block;
+    overflow: scroll;
+    height: 200px;
+    width: 200px;
+    border: 1px solid black;
+}
+
+.disable2{
+    display: none;
+}
+
+.flex{
+    display: flex;
+}
