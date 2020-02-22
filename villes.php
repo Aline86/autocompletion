@@ -8,6 +8,7 @@
   <div id="villesDeFrance" class="villes"></div>
   <div id="postal" class="postal"></div>
 </div>
+
 </form>
 
 
@@ -21,22 +22,25 @@ function myFunction(arr, value, villecp, div, linkinfo) {
         document.getElementById(div).innerHTML=""
         tableau_ville=[]
         tableau_code=[]
-        for (i=0; i<arr.length; i++){
+       
+     for (i=0; i<arr.length; i++){
          
           if(arr[i].postal.includes('-')){
             villestirets=arr[i].postal.split("-")
            console.log(villestirets)
            for(i=0; i<villestirets.length; i++){
-              tableau_code.push(villestirets[i])
+              tableau_code.push(villestirets[0])
+              
             }
-                 
-           }
+          break;     
+          
           
         }
+      }
            for (i=0; i<arr.length; i++){
           
             tableau_ville.push(arr[i].ville_nom)
-            tableau_code.push(arr[i].postal) 
+            tableau_code.push(arr[i].postal)
           }
       var autocomplete=document.getElementById(div)
       element=[];   
@@ -73,10 +77,13 @@ function myFunction(arr, value, villecp, div, linkinfo) {
 
 
     if(mot!=""){
-        mot=document.getElementById(villecp).value.substring(0, mot.length); 
+      
+        mot=document.getElementById(villecp).value.substring(0, mot.length);
+        
     }  
     if(code!=""){
         code=document.getElementById(villecp).value.substring(0, code.length); 
+       
     }   
     console.log(document.getElementById(div))        
     }   
@@ -141,7 +148,7 @@ input.addEventListener('keyup', function(e){
     
 var cp=document.getElementById('cp');
 
-code=[]
+code=""
 
 cp.addEventListener('keyup', function(e){
    
